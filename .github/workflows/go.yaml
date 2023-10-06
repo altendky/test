@@ -10,6 +10,7 @@ on:
 
 jobs:
   go:
+    runs-on: ubuntu-latest
     steps:
     - name: before
       if: github.base_ref != '' && always()
