@@ -1,0 +1,24 @@
+name: go
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - '**'
+
+jobs:
+  go:
+    steps:
+    - name: before
+      if: if: github.base_ref != '' && always()
+      run: |
+        true
+    - name: fail
+      run: |
+        false
+    - name: after
+      if: if: github.base_ref != '' && always()
+      run: |
+        true
